@@ -1,0 +1,422 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="Keywords" content="blog"/>
+    <meta name="Description" content="blog"/>
+    <title>Simple</title>
+    <link rel="shortcut icon" href="/static/favicon.png"/>
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+</head>
+<body>
+<div class="main">
+    <div class="header">
+    	<ul id="pages">
+            <li><a href="/">home</a></li>
+            <li><a href="/#/tags">tags</a></li>
+            <li><a href="/#/archive">archive</a></li>
+    	</ul>
+    </div>
+	<div class="wrap-header">
+	<h1>
+    <a href="/" id="title"></a>
+	</h1>
+	</div>
+<div id="md" style="display: none;">
+<!-- markdown -->
+UIView动画
+-------------
+    //1.标记开始设置动画
+    [UIView beginAnimations:@"属性动画" context:@"传值"];
+    //设置动画参数
+    [UIView setAnimationDuration:3];//动画时间
+    [UIView setAnimationRepeatCount:3];
+    [UIView setAnimationRepeatAutoreverses:YES];
+    _imageView.backgroundColor = [UIColor colorWithRed:arc4random()%256/255.0
+                                                 green:arc4random()%256/255.0
+                                                  blue:arc4random()%256/255.0
+                                                 alpha:1.0];
+    _imageView.center = CGPointMake(arc4random()%200, arc4random()%200);
+    //提交设置，开始执行动画
+    [UIView commitAnimations];
+
+2.CGAffineTransformTranslate移动动画
+
+    CGAffineTransformMakeTranslation每次都是以最初位置的中心点为起始参照
+    CGAffineTransformTranslate每次都是以传入的transform为起始参照
+    CGAffineTransformIdentity为最初状态，即最初位置的中心点
+    //基于上一次
+    _imageView.transform = CGAffineTransformTranslate(_imageView.transform, 50, 50);
+    //基于最初位置
+     _imageView.transform = CGAffineTransformMakeTranslation(-50, -50);
+
+3.CGAffineTransformRotate旋转动画
+
+    [UIView animateWithDuration:0.8 animations:^{
+        
+        //基于上一次
+        _imageView.transform = CGAffineTransformRotate(_imageView.transform, M_PI/6);
+        //基于原始
+        _imageView.transform = CGAffineTransformMakeRotation(-M_PI/4);
+    } completion:^(BOOL finished) {
+        NSLog(@"旋转动画结束");
+    }
+4.CGAffineTransformScale缩放动画
+
+    [UIView animateWithDuration:0.8 animations:^{
+        
+        //基于上一次
+        _imageView.transform = CGAffineTransformScale(_imageView.transform, 1.2, 1.2);
+        //基于原始
+        _imageView.transform = CGAffineTransformMakeScale(1.4,1.4 );
+    } completion:NULL];
+
+5.transition过渡动画
+
+    [UIView transitionWithView:_imageView duration:1 options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
+        
+        if (_fromView.superview != nil) {
+            [_fromView removeFromSuperview];
+            [_imageView addSubview:_toView];
+        }else{
+            [_toView removeFromSuperview];
+            [_imageView addSubview:_fromView];
+        }
+        _imageView.transform = CGAffineTransformRotate(_imageView.transform, M_PI/6);
+        [UIView setAnimationRepeatCount:3];
+        [UIView setAnimationRepeatAutoreverses:YES];
+    } completion:NULL];
+
+UILayer动画
+-------------
+1.CABasicAnimation动画（移动）
+
+    //UIView的属性动画会修改属性的值
+    //CALayer的属性动画，只是实现动画的过渡效果，并没有修改属性的值
+    //创建animation对象.keyPath即要实现动画的属性名称
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position"];
+    animation.fromValue = [NSValue valueWithCGPoint:_imageView.layer.position];
+    animation.toValue = [NSValue valueWithCGPoint:CGPointMake(200, 200)];
+    animation.duration = 1.0;
+    animation.repeatCount = 4;
+    animation.autoreverses = YES;
+    //将animation对象添加到layer图层上
+    [_imageView.layer addAnimation:animation forKey:@"position动画"];
+2.CABasicAnimation动画 （缩放）
+
+    //实现缩放动画
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.scale.y"];
+    animation.duration = 1.0;
+    animation.repeatCount = 3.0;
+    animation.autoreverses = YES;
+    animation.fromValue = [NSNumber numberWithFloat:1.0];
+    animation.toValue = [NSNumber numberWithFloat:3.0];
+    [_imageView.layer addAnimation:animation forKey:@"缩放动画"];
+3.CAKeyframeAnimation动画
+
+    //imageView按照字母Z移动
+    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+    animation.duration = 1.0;
+    animation.repeatCount = 3.0;
+    animation.autoreverses = YES;
+    animation.values = @[[NSValue valueWithCGPoint:CGPointMake(50, 60)],
+                         [NSValue valueWithCGPoint:CGPointMake(200, 60)], 
+                         [NSValue valueWithCGPoint:CGPointMake(50, 250)], 
+                         [NSValue valueWithCGPoint:CGPointMake(200, 250)]];
+    [_imageView.layer addAnimation:animation forKey:@"Z移动动画"];
+4.CAAnimationGroup动画
+
+    CAAnimationGroup *groupAnimation = [CAAnimationGroup animation];
+    CABasicAnimation *animation1 = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    animation1.fromValue = [NSNumber numberWithFloat:0.5];
+    animation1.toValue = [NSNumber numberWithFloat:2.0];
+    CAKeyframeAnimation *animation2 = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+    animation2.values = @[[NSValue valueWithCGPoint:CGPointMake(50, 60)], 
+                          [NSValue valueWithCGPoint:CGPointMake(200, 60)], 
+                          [NSValue valueWithCGPoint:CGPointMake(50, 250)], 
+                          [NSValue valueWithCGPoint:CGPointMake(200, 250)]];
+    groupAnimation.animations = @[animation1,animation2];
+    groupAnimation.duration = 1.0;
+    groupAnimation.autoreverses = YES;
+    groupAnimation.repeatCount = 3.0;
+    [_imageView.layer addAnimation:groupAnimation forKey:@"组合动画"];
+5.CATransition动画
+
+    CATransition *animation = [CATransition animation];
+    //过渡动画的样式
+    //animation.type = kCATransitionPush;
+    animation.type = @"rippleEffect";
+    //过渡动画的方向
+    animation.subtype = kCATransitionFromLeft;
+    animation.duration = 0.8;
+    [_imageView.layer addAnimation:animation forKey:@"过渡动画"];
+UILayer设置
+--------------
+
+    //设置圆角
+    _imageView.layer.cornerRadius = 80;
+    //背景颜色
+    _imageView.layer.backgroundColor = [UIColor magentaColor].CGColor;
+    //边框
+    _imageView.layer.borderWidth = 10;
+    _imageView.layer.borderColor = [UIColor blackColor].CGColor;
+    //阴影
+    _imageView.layer.shadowColor = [UIColor magentaColor].CGColor;
+    _imageView.layer.shadowOffset = CGSizeMake(20, 20);
+    / /阴影半径
+    _imageView.layer.shadowRadius = 0.2;
+    / /阴影透明度
+    _imageView.layer.shadowOpacity = 0.3;
+    //ImageView添加图片，默认不显示圆角。将layer层的masksToBounds设置为YES，可以根据边框裁剪出圆角。
+    //但是imageView一旦根据边框裁剪后，阴影也被裁剪掉了，因此，imageView设置图像后，圆角和阴影无法共存
+    _imageView.layer.masksToBounds = YES;
+    //锚点0~1 layer左上角(0,0) 右下角(1,1) 中心点(0.5,0.5) 默认值是中心点
+    //轻易不要修改锚点，锚点会影响position，frame等数据
+    NSLog(@"archor point = %@",NSStringFromCGPoint(_imageView.layer.anchorPoint));
+    //position 锚点在父视图坐标系中，与父视图坐标系原点的距离
+    //center 视图中心点在在父视图坐标系中，与父视图坐标系原点的距离
+    NSLog(@"position = %@",NSStringFromCGPoint(_imageView.layer.position));
+<!-- markdown end -->
+</div>
+<div class="entry" id="main">
+<!-- content -->
+<h2 id="uiview">UIView动画</h2>
+
+<pre><code>//1.标记开始设置动画
+[UIView beginAnimations:@"属性动画" context:@"传值"];
+//设置动画参数
+[UIView setAnimationDuration:3];//动画时间
+[UIView setAnimationRepeatCount:3];
+[UIView setAnimationRepeatAutoreverses:YES];
+_imageView.backgroundColor = [UIColor colorWithRed:arc4random()%256/255.0
+                                             green:arc4random()%256/255.0
+                                              blue:arc4random()%256/255.0
+                                             alpha:1.0];
+_imageView.center = CGPointMake(arc4random()%200, arc4random()%200);
+//提交设置，开始执行动画
+[UIView commitAnimations];
+</code></pre>
+
+<p>2.CGAffineTransformTranslate移动动画</p>
+
+<pre><code>CGAffineTransformMakeTranslation每次都是以最初位置的中心点为起始参照
+CGAffineTransformTranslate每次都是以传入的transform为起始参照
+CGAffineTransformIdentity为最初状态，即最初位置的中心点
+//基于上一次
+_imageView.transform = CGAffineTransformTranslate(_imageView.transform, 50, 50);
+//基于最初位置
+ _imageView.transform = CGAffineTransformMakeTranslation(-50, -50);
+</code></pre>
+
+<p>3.CGAffineTransformRotate旋转动画</p>
+
+<pre><code>[UIView animateWithDuration:0.8 animations:^{
+
+    //基于上一次
+    _imageView.transform = CGAffineTransformRotate(_imageView.transform, M_PI/6);
+    //基于原始
+    _imageView.transform = CGAffineTransformMakeRotation(-M_PI/4);
+} completion:^(BOOL finished) {
+    NSLog(@"旋转动画结束");
+}
+</code></pre>
+
+<p>4.CGAffineTransformScale缩放动画</p>
+
+<pre><code>[UIView animateWithDuration:0.8 animations:^{
+
+    //基于上一次
+    _imageView.transform = CGAffineTransformScale(_imageView.transform, 1.2, 1.2);
+    //基于原始
+    _imageView.transform = CGAffineTransformMakeScale(1.4,1.4 );
+} completion:NULL];
+</code></pre>
+
+<p>5.transition过渡动画</p>
+
+<pre><code>[UIView transitionWithView:_imageView duration:1 options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
+
+    if (_fromView.superview != nil) {
+        [_fromView removeFromSuperview];
+        [_imageView addSubview:_toView];
+    }else{
+        [_toView removeFromSuperview];
+        [_imageView addSubview:_fromView];
+    }
+    _imageView.transform = CGAffineTransformRotate(_imageView.transform, M_PI/6);
+    [UIView setAnimationRepeatCount:3];
+    [UIView setAnimationRepeatAutoreverses:YES];
+} completion:NULL];
+</code></pre>
+
+<h2 id="uilayer">UILayer动画</h2>
+
+<p>1.CABasicAnimation动画（移动）</p>
+
+<pre><code>//UIView的属性动画会修改属性的值
+//CALayer的属性动画，只是实现动画的过渡效果，并没有修改属性的值
+//创建animation对象.keyPath即要实现动画的属性名称
+CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position"];
+animation.fromValue = [NSValue valueWithCGPoint:_imageView.layer.position];
+animation.toValue = [NSValue valueWithCGPoint:CGPointMake(200, 200)];
+animation.duration = 1.0;
+animation.repeatCount = 4;
+animation.autoreverses = YES;
+//将animation对象添加到layer图层上
+[_imageView.layer addAnimation:animation forKey:@"position动画"];
+</code></pre>
+
+<p>2.CABasicAnimation动画 （缩放）</p>
+
+<pre><code>//实现缩放动画
+CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.scale.y"];
+animation.duration = 1.0;
+animation.repeatCount = 3.0;
+animation.autoreverses = YES;
+animation.fromValue = [NSNumber numberWithFloat:1.0];
+animation.toValue = [NSNumber numberWithFloat:3.0];
+[_imageView.layer addAnimation:animation forKey:@"缩放动画"];
+</code></pre>
+
+<p>3.CAKeyframeAnimation动画</p>
+
+<pre><code>//imageView按照字母Z移动
+CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+animation.duration = 1.0;
+animation.repeatCount = 3.0;
+animation.autoreverses = YES;
+animation.values = @[[NSValue valueWithCGPoint:CGPointMake(50, 60)],
+                     [NSValue valueWithCGPoint:CGPointMake(200, 60)], 
+                     [NSValue valueWithCGPoint:CGPointMake(50, 250)], 
+                     [NSValue valueWithCGPoint:CGPointMake(200, 250)]];
+[_imageView.layer addAnimation:animation forKey:@"Z移动动画"];
+</code></pre>
+
+<p>4.CAAnimationGroup动画</p>
+
+<pre><code>CAAnimationGroup *groupAnimation = [CAAnimationGroup animation];
+CABasicAnimation *animation1 = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+animation1.fromValue = [NSNumber numberWithFloat:0.5];
+animation1.toValue = [NSNumber numberWithFloat:2.0];
+CAKeyframeAnimation *animation2 = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+animation2.values = @[[NSValue valueWithCGPoint:CGPointMake(50, 60)], 
+                      [NSValue valueWithCGPoint:CGPointMake(200, 60)], 
+                      [NSValue valueWithCGPoint:CGPointMake(50, 250)], 
+                      [NSValue valueWithCGPoint:CGPointMake(200, 250)]];
+groupAnimation.animations = @[animation1,animation2];
+groupAnimation.duration = 1.0;
+groupAnimation.autoreverses = YES;
+groupAnimation.repeatCount = 3.0;
+[_imageView.layer addAnimation:groupAnimation forKey:@"组合动画"];
+</code></pre>
+
+<p>5.CATransition动画</p>
+
+<pre><code>CATransition *animation = [CATransition animation];
+//过渡动画的样式
+//animation.type = kCATransitionPush;
+animation.type = @"rippleEffect";
+//过渡动画的方向
+animation.subtype = kCATransitionFromLeft;
+animation.duration = 0.8;
+[_imageView.layer addAnimation:animation forKey:@"过渡动画"];
+</code></pre>
+
+<h2 id="uilayer">UILayer设置</h2>
+
+<pre><code>//设置圆角
+_imageView.layer.cornerRadius = 80;
+//背景颜色
+_imageView.layer.backgroundColor = [UIColor magentaColor].CGColor;
+//边框
+_imageView.layer.borderWidth = 10;
+_imageView.layer.borderColor = [UIColor blackColor].CGColor;
+//阴影
+_imageView.layer.shadowColor = [UIColor magentaColor].CGColor;
+_imageView.layer.shadowOffset = CGSizeMake(20, 20);
+/ /阴影半径
+_imageView.layer.shadowRadius = 0.2;
+/ /阴影透明度
+_imageView.layer.shadowOpacity = 0.3;
+//ImageView添加图片，默认不显示圆角。将layer层的masksToBounds设置为YES，可以根据边框裁剪出圆角。
+//但是imageView一旦根据边框裁剪后，阴影也被裁剪掉了，因此，imageView设置图像后，圆角和阴影无法共存
+_imageView.layer.masksToBounds = YES;
+//锚点0~1 layer左上角(0,0) 右下角(1,1) 中心点(0.5,0.5) 默认值是中心点
+//轻易不要修改锚点，锚点会影响position，frame等数据
+NSLog(@"archor point = %@",NSStringFromCGPoint(_imageView.layer.anchorPoint));
+//position 锚点在父视图坐标系中，与父视图坐标系原点的距离
+//center 视图中心点在在父视图坐标系中，与父视图坐标系原点的距离
+NSLog(@"position = %@",NSStringFromCGPoint(_imageView.layer.position));
+</code></pre>
+<!-- content end -->
+</div>
+<br>
+<br>
+    <div id="disqus_thread"></div>
+	<div class="footer">
+		<p>© Copyright 2014 by isnowfy, Designed by isnowfy</p>
+	</div>
+</div>
+<script src="main.js"></script>
+<script id="content" type="text/mustache">
+    <h1>{{title}}</h1>
+    <div class="tag">
+    {{date}}
+    {{#tags}}
+    <a href="/#/tag/{{name}}">#{{name}}</a>
+    {{/tags}}
+    </div>
+</script>
+<script id="pagesTemplate" type="text/mustache">
+    {{#pages}}
+    <li>
+        <a href="{{path}}">{{title}}</a>
+    </li>
+    {{/pages}}
+</script>
+<script>
+$(document).ready(function() {
+    $.ajax({
+        url: "main.json",
+        type: "GET",
+        dataType: "json",
+        success: function(data) {
+            $("#title").html(data.name);
+            var pagesTemplate = Hogan.compile($("#pagesTemplate").html());
+            var pagesHtml = pagesTemplate.render({"pages": data.pages});
+            $("#pages").append(pagesHtml);
+            //path
+            var path = "ocuiviewuilayer.html";
+            //path end
+            var now = 0;
+            for (var i = 0; i < data.posts.length; ++i)
+                if (path == data.posts[i].path)
+                    now = i;
+            var post = data.posts[now];
+            var tmp = post.tags.split(" ");
+            var tags = [];
+            for (var i = 0; i < tmp.length; ++i)
+                if (tmp[i].length > 0)
+                    tags.push({"name": tmp[i]});
+            var contentTemplate = Hogan.compile($("#content").html());
+            var contentHtml = contentTemplate.render({"title": post.title, "tags": tags, "date": post.date});
+            $("#main").prepend(contentHtml);
+            if (data.disqus_shortname.length > 0) {
+                var disqus_shortname = data.disqus_shortname;
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            }
+        }
+    });
+});
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ["\\(", "\\)"]], processEscapes: true}});
+</script>
+</body>
+</html>
