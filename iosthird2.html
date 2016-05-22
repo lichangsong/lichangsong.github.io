@@ -1,0 +1,185 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="Keywords" content="blog"/>
+    <meta name="Description" content="blog"/>
+    <title>Simple</title>
+    <link rel="shortcut icon" href="/static/favicon.png"/>
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+</head>
+<body>
+<div class="main">
+    <div class="header">
+    	<ul id="pages">
+            <li><a href="/">home</a></li>
+            <li><a href="/#/tags">tags</a></li>
+            <li><a href="/#/archive">archive</a></li>
+    	</ul>
+    </div>
+	<div class="wrap-header">
+	<h1>
+    <a href="/" id="title"></a>
+	</h1>
+	</div>
+<div id="md" style="display: none;">
+<!-- markdown -->
+Swift Part
+--------
+* [swift-style-guide](https://github.com/github/swift-style-guide) Swift 编码规范
+* [swift-style-guide](https://github.com/raywenderlich/swift-style-guide) Swift 编码规范
+* [swift-summary](https://github.com/jakarmy/swift-summary) 对于 Swift 入门和语法学习来说，Apple 的官方文档是很好的材料。但是文档存在内容较多，有时候阅读噪声太大的问题。这个 repo 提供了一系列 Playground 文件，集中地展示了 Swift 的基础语法特性。如果你有一些其他语言的使用基础，想要入门 Swift 的话，这些示例代码应该能够帮助你完成这个任务。
+* [JASON](https://github.com/delba/JASON) 一个 Swift 的 JSON 解析库，并提供了 Alamofire 的支持。作者在benchmark中宣称 JASON 的速度要比SwiftyJSON要快很多，但是实际上可能是进行性能测试的代码存在的一些类型转换上的区别导致的。不过不论如何，JASON 的代码十分简洁，为我们提供了一个在 Swift 中使用 JSON 的另一种封装和选择。
+* [Interpolate](https://github.com/marmelroy/Interpolate)  一个用来创建交互式手势动画的插值框架。Interpolate 把所有的动画都看作是属性值随着时间进行改变的插值，并以类型安全的方式来创建随时间变化的动画属性值。这个框架在制作交互式教程或者一些复杂的手势动画时会十分灵活有用。 ![](http://lichangsong.github.io/img/0DD09E8E-BCCC-4278-9BB4-59DC28263CE0.png)
+* [paper-onboarding](https://github.com/Ramotion/paper-onboarding) 一款很炫的引导动画 ![](http://lichangsong.github.io/img/73D4219C-9B4D-4B1A-BD27-1B83366321D5.png)
+* [EasyPeasy](https://github.com/nakiostudio/EasyPeasy) 另一个用来简化创建布局约束的框架，EasyPeasy 使用了更简洁和智能的约束描述语法来创建约束，并提供了很多便利的方法和属性辅助我们以更加直观的方式用纯代码使用 AutoLayout。如果你不使用 Interface Builder，而是选择在源代码中创建视图和约束的话，这个框架可以帮助你节省很多时间。 ![](http://lichangsong.github.io/img/3BD6997A-4952-499A-990C-A999A9AC1E54.png)
+* [Palau](https://github.com/symentis/Palau) Swift 提供的类型安全对现有的 Cocoa API 的改进是很有潜力的，而 `NSUserDefaults` 就是一个很好的改进案例。Palau 用类型安全的方式对 `NSUserDefaults` 进行了封装，同时也扩展了 `NSUserDefaults` 所能支持的类型，让我们可以用更好的方式使用 `NSUserDefaults`。
+* [Material](https://github.com/CosmicMind/Material) 如果你或者你的设计师特别喜欢 Google 的 Material 设计，并且想要在 iOS 上使用这种设计方式的话，这个框架能很好地帮助你迅速打造一款在 iOS 上的 Material 风格应用。它提供了像是按钮、导航栏、点击的动画效果等一系列 Material 风格的 UI 元素供你使用。 ![](http://lichangsong.github.io/img/BA5832AE-53D1-4D42-B2AC-72148D5E8899.png)
+* [Gifu](https://github.com/kaishin/Gifu) 一个轻量级的 GIF 动画框架，它采用了利用 CADisplayLink 绑定帧动画，并逐帧解析和加载的方式，来处理体积较大的 GIF 文件。如果你的应用中恰好有显示大 GIF 文件的需求，那这个框架会是一个可选项。 ![](http://lichangsong.github.io/img/AB798CA2-A31C-4083-8100-FFD5956C4E8E.png)
+* [UIImageColors](https://github.com/jathu/UIImageColors) 从一张 `UIImage` 图片中提取出主色调的框架。将 cell 的背景颜色设置为与其中图片的主色调一致的颜色来增强用户体验和区分不同 cell 的内容，是在 Apple 现在的 iTunes 应用上常见的表现手段。利用该框架，你可以简单地运用将这种设计手法进行设计，而且框架中还提供了一系列配套的辅助方法以帮助你简化构建这种高对比度 cell。 ![](http://lichangsong.github.io/img/E25394C1-4F7F-45C5-AA99-8F247F93EBFA.png)
+* [SwiftOCR](https://github.com/garnele007/SwiftOCR) SwiftOCR 是一个用 Swift 写的 OCR 框架，相比于 C++ 写的有三十年历史的 Tesseract，作者宣称在识别数字和字母的准确性和效率上，SwiftOCR 都具有压倒性的优势。如果你恰好有识别像是验证码或者礼品卡上的数字和字母这样的需求的话，不妨尝试下这个框架。同时如果你在学习图像识别或者是人工智能之类的课题的话，这个项目也会 是不错的学习资料。
+* [SwiftyMarkdown](https://github.com/SimonFairbairn/SwiftyMarkdown) 一个将 markdown 转换为 `NSAttributedString` 的框架。相比于其他一些 markdown 解析的框架，SwiftyMarkdown 使用的是 Cocoa 框架的 `NSScanner` 来进行的实现，因此代码相对简单。不过如果你需要处理较多的 markdown 内容，可能选择其他一些更底层的实现会更合适。 ![](http://lichangsong.github.io/img/2ED7E8F6-DAD7-4B5D-AA7A-CFB59044AFE6.png)
+* [Filterpedia](https://github.com/FlexMonkey/Filterpedia) 一个开源的 iPad app，为我们展示了使用 Apple Core Image 框架制作图片滤镜的方法。图片处理是 iOS 应用中一个很常见的任务，而 Apple 也为开发者们提供了一系列便利的方式来进行相关处理。如果你正在制作一款图片处理应用的话，这个项目中很多代码和实现都可以作为参考。 ![](http://lichangsong.github.io/img/AB008216-885C-4F1E-8ED6-492B80A31EA6.png)
+* [PageMenu](https://github.com/HighBay/PageMenu) 类似的分页式的 ViewController 切换在最近的 app 交互中很常见，在内容关联的同屏幕中进行类似的切换也很符合用户的使用直觉。这个框架为我们提供了分页式交互的一种实现方式。
+ ![](http://lichangsong.github.io/img/2487657A-DD82-41ED-B3E6-B392F35C97E8.png)
+* [Permission](https://github.com/delba/Permission) 在 iOS 中获取像是推送通知，麦克风或者联系人等权限的代码虽然不是很困难，但是却分散在 SDK 的各处，使用起来不是很方便。这个框架将 iOS 中所有的权限请求集中处理，并为我们提供了统一和简洁的 API。 ![](http://lichangsong.github.io/img/497521C1-7540-463F-9734-8A95554E8DE5.png)
+* [CocoaLumberjack](https://github.com/CocoaLumberjack/CocoaLumberjack) 一个 Log 系统，可以将程序运行过程中打的 log 发送到自己服务器，方便之后数据分析或者除错。 ![](http://lichangsong.github.io/img/27516F97-AFAC-4EA4-86CF-82AD51B5555E.png)
+* [TextAttributes](https://github.com/delba/TextAttributes) Cocoa 框架中有一些使用起来会令人抓狂的 API，`NSAttributedString` 就是其中之一。想想看要创建一个带有格式的字符串是多困难吧：寻找 `Range`，指定属性，创建配置字典等等。Cocoa 这样设计 API 可以最大限度保证松耦合，确实有其优势。但是作为 API 的使用者，这样的接口使用起来并不是特别方便，而且并不太适合 Swift 的强类型约束。TextAttributes 框架将这些松耦合的接口进行了重新封装，使其类型更加安全，也使得原有的 API 更易用一些。 ![](http://lichangsong.github.io/img/548885D8-8A15-4EA5-9ADB-C17E3B9A5DFB.png)
+* [FolioReaderKit](https://github.com/FolioReader/FolioReaderKit) 一个 Swift 写的 ePub 电子书解析和阅读的框架，它包含了包括字体大小调整，主题，高亮标记等绝大多数电子书阅读时所需要的操作，可以让我们非常容易地构建一款电子书阅读的 app 或者是相关模块。 ![](http://lichangsong.github.io/img/84B64995-98BE-43BB-8FEC-36FD1360D7A3.png)
+* [Advance](https://github.com/storehouse/Advance) 一个 Swift 动画框架，可以让我们用很简单的 API 来制作高性能和更真实的交互式动画。如果你对交互式动画并不熟悉的话，可以阅读一下 objc 中国的这篇文章。交互式动画中有很多隐藏的细节，并需要不少动画制作的经验。Advance 将这些繁琐的细节进行了封装，让开发者可以在更高抽象层上制作出完美的交互式动画。  ![](http://lichangsong.github.io/img/105930FD-E5B7-4DF3-B83D-DABA00CB4D4A.png)
+* [DynamicMaskSegmentSwitch](https://github.com/KittenYang/DynamicMaskSegmentSwitch) 一个切换效果 ![](http://lichangsong.github.io/img/9DE7E507-D6F0-44E5-A04F-0F2C1ED16914.png)
+* [KMNavigationBarTransition](https://github.com/MoZhouqi/KMNavigationBarTransition) 用来统一管理导航栏转场以及当 push 或者 pop 的时候使动画效果更加顺滑的通用库。自定义 Navigation View Controller 导航栏的背景或者状态是 iOS 开发者一定会遇到的课题，这个框架帮助我们将复杂的操作细节进行了封装，而使用者只需要关心目标 view controller 的样式即可。
+* [NextGrowingTextView](https://github.com/muukii/NextGrowingTextView)  随着输入文本变化而自动调整高度的 text view。相比起其他类似的实现，NextGrowingTextView 是基于 iOS 7 的 TextKit 大幅修改之前的类似框架的重写。它为使用者提供了足够的委托方法和访问接口，十分灵活。 ![](http://lichangsong.github.io/img/D5C58395-B311-490C-857C-CABCF551207D.png)
+* [CoreStore](https://github.com/JohnEstropia/CoreStore) Core Data 是 Apple 官方的数据关系图框架。虽然通过 Core Data 来使用和操作数据库可以不向项目中引入额外依赖，但是 Core Data 强大的功能的背后是较为陡峭的学习曲线和对开发者相对较高的技能要求。很多时候我们往往会选择一些替代方案或者对 Core Data 的再次包装和简化。CoreStore 就是一个基于 Core Data 的 API 封装，它能让我们利用 Swift 的特性以一种更好的方式使用 Core Data。
+OC Part
+--------
+* [objective-c-style-guide](https://github.com/NYTimes/objective-c-style-guide) OC 编码规范
+* [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa) 函数响应式编程库
+* [RealReachability](https://github.com/dustturtle/RealReachability) 监视网络状况的改变并在 UI 上进行合适的对应，可以提供良好的用户体验。我们一般都使用Reachability来对网络状况进行监视。但是现有方案存在一个问题，那就是它只监视本地连接是否有效，而并不关心到远端的网络连接是否真的能接收到数据。RealReachability 就是为了解决这个问题的改进版实现，它使用 ping 模型来保证本地连接和到远端的连接是同时有效的，相比原版是一种更可靠的方案。
+* [Wonderful](https://github.com/dsxNiubility/Wonderful) Wonderful 这个库主要是与UIColor息息相连的，其中一共包含四个子文件，UIColor+Wonderful，UIColor+Separate，SXColorGradientView，SXMarquee。分别对应颜色扩展，色彩分离，颜色渐变，和跑马灯 4种主要功能 ![](http://lichangsong.github.io/img/3BEDA978-CBBE-41AC-B1D0-6B6C904EF85C.png)
+* [SCTrelloNavigation](https://github.com/SergioChan/SCTrelloNavigation) iOS上类似trello的导航动效控件实现。 ![](http://lichangsong.github.io/img/865CE005-9B22-405B-A451-6745FFB5C0EF.png)
+* [LunarCore](https://github.com/cyanzhong/LunarCore) 小历是一个简洁的农历 app，目前支持 iOS & OS X 两端，iOS 端多次被 App Store 官方推荐。 ![](http://lichangsong.github.io/img/5101FFB5-01D0-42E2-88CB-8084E18F1E4F.png)
+* [openshare](https://github.com/100apps/openshare) OpenShare的功能就是替代官方的SDK向各个平台的移动客户端(比如QQ)发起请求(分享、OAuth)，然后接收返回结果。 ![](http://lichangsong.github.io/img/2D43E3D1-17D8-4717-9D11-369BF2E70F91.png)
+* [LFProgressHUD](https://github.com/cctv1237/LFProgressHUD) 一款菊花加载的框架 ![](http://lichangsong.github.io/img/D26323E1-C6A3-4BFE-A2E9-8AFB1861B00E.png)
+* [BuildTimeAnalyzer-for-Xcode](https://github.com/RobertGummesson/BuildTimeAnalyzer-for-Xcode) 一款 Xcode 插件，可以用来统计项目中的文件的编译时间，帮助你找到编译花费时间最长的源文件和方法。对于大型项目来说，编译时间太长是导致开发效率降低的最主要和最直接的原因，如果我们能够压缩编译时间，那么工程师也就会更有动力进行多次部署和调试。你可以通过这款插件的统计，有目的地对源码进行优化，以提高开发效率。 ![](http://lichangsong.github.io/img/6C8A884E-E58E-42CB-9FCC-DCE8291B038D.png)
+* [TYLaunchAnimation](https://github.com/12207480/TYLaunchAnimation) 启动图动画，带广告，封装成UIView分类，直接使用，支持自定义view，自定义动画。 ![](http://lichangsong.github.io/img/1.png)
+<!-- markdown end -->
+</div>
+<div class="entry" id="main">
+<!-- content -->
+<h2 id="swiftpart">Swift Part</h2>
+
+<ul>
+<li><a href="https://github.com/github/swift-style-guide">swift-style-guide</a> Swift 编码规范</li>
+<li><a href="https://github.com/raywenderlich/swift-style-guide">swift-style-guide</a> Swift 编码规范</li>
+<li><a href="https://github.com/jakarmy/swift-summary">swift-summary</a> 对于 Swift 入门和语法学习来说，Apple 的官方文档是很好的材料。但是文档存在内容较多，有时候阅读噪声太大的问题。这个 repo 提供了一系列 Playground 文件，集中地展示了 Swift 的基础语法特性。如果你有一些其他语言的使用基础，想要入门 Swift 的话，这些示例代码应该能够帮助你完成这个任务。</li>
+<li><a href="https://github.com/delba/JASON">JASON</a> 一个 Swift 的 JSON 解析库，并提供了 Alamofire 的支持。作者在benchmark中宣称 JASON 的速度要比SwiftyJSON要快很多，但是实际上可能是进行性能测试的代码存在的一些类型转换上的区别导致的。不过不论如何，JASON 的代码十分简洁，为我们提供了一个在 Swift 中使用 JSON 的另一种封装和选择。</li>
+<li><a href="https://github.com/marmelroy/Interpolate">Interpolate</a>  一个用来创建交互式手势动画的插值框架。Interpolate 把所有的动画都看作是属性值随着时间进行改变的插值，并以类型安全的方式来创建随时间变化的动画属性值。这个框架在制作交互式教程或者一些复杂的手势动画时会十分灵活有用。 <img src="http://lichangsong.github.io/img/0DD09E8E-BCCC-4278-9BB4-59DC28263CE0.png" alt="" title=""></li>
+<li><a href="https://github.com/Ramotion/paper-onboarding">paper-onboarding</a> 一款很炫的引导动画 <img src="http://lichangsong.github.io/img/73D4219C-9B4D-4B1A-BD27-1B83366321D5.png" alt="" title=""></li>
+<li><a href="https://github.com/nakiostudio/EasyPeasy">EasyPeasy</a> 另一个用来简化创建布局约束的框架，EasyPeasy 使用了更简洁和智能的约束描述语法来创建约束，并提供了很多便利的方法和属性辅助我们以更加直观的方式用纯代码使用 AutoLayout。如果你不使用 Interface Builder，而是选择在源代码中创建视图和约束的话，这个框架可以帮助你节省很多时间。 <img src="http://lichangsong.github.io/img/3BD6997A-4952-499A-990C-A999A9AC1E54.png" alt="" title=""></li>
+<li><a href="https://github.com/symentis/Palau">Palau</a> Swift 提供的类型安全对现有的 Cocoa API 的改进是很有潜力的，而 <code>NSUserDefaults</code> 就是一个很好的改进案例。Palau 用类型安全的方式对 <code>NSUserDefaults</code> 进行了封装，同时也扩展了 <code>NSUserDefaults</code> 所能支持的类型，让我们可以用更好的方式使用 <code>NSUserDefaults</code>。</li>
+<li><a href="https://github.com/CosmicMind/Material">Material</a> 如果你或者你的设计师特别喜欢 Google 的 Material 设计，并且想要在 iOS 上使用这种设计方式的话，这个框架能很好地帮助你迅速打造一款在 iOS 上的 Material 风格应用。它提供了像是按钮、导航栏、点击的动画效果等一系列 Material 风格的 UI 元素供你使用。 <img src="http://lichangsong.github.io/img/BA5832AE-53D1-4D42-B2AC-72148D5E8899.png" alt="" title=""></li>
+<li><a href="https://github.com/kaishin/Gifu">Gifu</a> 一个轻量级的 GIF 动画框架，它采用了利用 CADisplayLink 绑定帧动画，并逐帧解析和加载的方式，来处理体积较大的 GIF 文件。如果你的应用中恰好有显示大 GIF 文件的需求，那这个框架会是一个可选项。 <img src="http://lichangsong.github.io/img/AB798CA2-A31C-4083-8100-FFD5956C4E8E.png" alt="" title=""></li>
+<li><a href="https://github.com/jathu/UIImageColors">UIImageColors</a> 从一张 <code>UIImage</code> 图片中提取出主色调的框架。将 cell 的背景颜色设置为与其中图片的主色调一致的颜色来增强用户体验和区分不同 cell 的内容，是在 Apple 现在的 iTunes 应用上常见的表现手段。利用该框架，你可以简单地运用将这种设计手法进行设计，而且框架中还提供了一系列配套的辅助方法以帮助你简化构建这种高对比度 cell。 <img src="http://lichangsong.github.io/img/E25394C1-4F7F-45C5-AA99-8F247F93EBFA.png" alt="" title=""></li>
+<li><a href="https://github.com/garnele007/SwiftOCR">SwiftOCR</a> SwiftOCR 是一个用 Swift 写的 OCR 框架，相比于 C++ 写的有三十年历史的 Tesseract，作者宣称在识别数字和字母的准确性和效率上，SwiftOCR 都具有压倒性的优势。如果你恰好有识别像是验证码或者礼品卡上的数字和字母这样的需求的话，不妨尝试下这个框架。同时如果你在学习图像识别或者是人工智能之类的课题的话，这个项目也会 是不错的学习资料。</li>
+<li><a href="https://github.com/SimonFairbairn/SwiftyMarkdown">SwiftyMarkdown</a> 一个将 markdown 转换为 <code>NSAttributedString</code> 的框架。相比于其他一些 markdown 解析的框架，SwiftyMarkdown 使用的是 Cocoa 框架的 <code>NSScanner</code> 来进行的实现，因此代码相对简单。不过如果你需要处理较多的 markdown 内容，可能选择其他一些更底层的实现会更合适。 <img src="http://lichangsong.github.io/img/2ED7E8F6-DAD7-4B5D-AA7A-CFB59044AFE6.png" alt="" title=""></li>
+<li><a href="https://github.com/FlexMonkey/Filterpedia">Filterpedia</a> 一个开源的 iPad app，为我们展示了使用 Apple Core Image 框架制作图片滤镜的方法。图片处理是 iOS 应用中一个很常见的任务，而 Apple 也为开发者们提供了一系列便利的方式来进行相关处理。如果你正在制作一款图片处理应用的话，这个项目中很多代码和实现都可以作为参考。 <img src="http://lichangsong.github.io/img/AB008216-885C-4F1E-8ED6-492B80A31EA6.png" alt="" title=""></li>
+<li><a href="https://github.com/HighBay/PageMenu">PageMenu</a> 类似的分页式的 ViewController 切换在最近的 app 交互中很常见，在内容关联的同屏幕中进行类似的切换也很符合用户的使用直觉。这个框架为我们提供了分页式交互的一种实现方式。
+<img src="http://lichangsong.github.io/img/2487657A-DD82-41ED-B3E6-B392F35C97E8.png" alt="" title=""></li>
+<li><a href="https://github.com/delba/Permission">Permission</a> 在 iOS 中获取像是推送通知，麦克风或者联系人等权限的代码虽然不是很困难，但是却分散在 SDK 的各处，使用起来不是很方便。这个框架将 iOS 中所有的权限请求集中处理，并为我们提供了统一和简洁的 API。 <img src="http://lichangsong.github.io/img/497521C1-7540-463F-9734-8A95554E8DE5.png" alt="" title=""></li>
+<li><a href="https://github.com/CocoaLumberjack/CocoaLumberjack">CocoaLumberjack</a> 一个 Log 系统，可以将程序运行过程中打的 log 发送到自己服务器，方便之后数据分析或者除错。 <img src="http://lichangsong.github.io/img/27516F97-AFAC-4EA4-86CF-82AD51B5555E.png" alt="" title=""></li>
+<li><a href="https://github.com/delba/TextAttributes">TextAttributes</a> Cocoa 框架中有一些使用起来会令人抓狂的 API，<code>NSAttributedString</code> 就是其中之一。想想看要创建一个带有格式的字符串是多困难吧：寻找 <code>Range</code>，指定属性，创建配置字典等等。Cocoa 这样设计 API 可以最大限度保证松耦合，确实有其优势。但是作为 API 的使用者，这样的接口使用起来并不是特别方便，而且并不太适合 Swift 的强类型约束。TextAttributes 框架将这些松耦合的接口进行了重新封装，使其类型更加安全，也使得原有的 API 更易用一些。 <img src="http://lichangsong.github.io/img/548885D8-8A15-4EA5-9ADB-C17E3B9A5DFB.png" alt="" title=""></li>
+<li><a href="https://github.com/FolioReader/FolioReaderKit">FolioReaderKit</a> 一个 Swift 写的 ePub 电子书解析和阅读的框架，它包含了包括字体大小调整，主题，高亮标记等绝大多数电子书阅读时所需要的操作，可以让我们非常容易地构建一款电子书阅读的 app 或者是相关模块。 <img src="http://lichangsong.github.io/img/84B64995-98BE-43BB-8FEC-36FD1360D7A3.png" alt="" title=""></li>
+<li><a href="https://github.com/storehouse/Advance">Advance</a> 一个 Swift 动画框架，可以让我们用很简单的 API 来制作高性能和更真实的交互式动画。如果你对交互式动画并不熟悉的话，可以阅读一下 objc 中国的这篇文章。交互式动画中有很多隐藏的细节，并需要不少动画制作的经验。Advance 将这些繁琐的细节进行了封装，让开发者可以在更高抽象层上制作出完美的交互式动画。  <img src="http://lichangsong.github.io/img/105930FD-E5B7-4DF3-B83D-DABA00CB4D4A.png" alt="" title=""></li>
+<li><a href="https://github.com/KittenYang/DynamicMaskSegmentSwitch">DynamicMaskSegmentSwitch</a> 一个切换效果 <img src="http://lichangsong.github.io/img/9DE7E507-D6F0-44E5-A04F-0F2C1ED16914.png" alt="" title=""></li>
+<li><a href="https://github.com/MoZhouqi/KMNavigationBarTransition">KMNavigationBarTransition</a> 用来统一管理导航栏转场以及当 push 或者 pop 的时候使动画效果更加顺滑的通用库。自定义 Navigation View Controller 导航栏的背景或者状态是 iOS 开发者一定会遇到的课题，这个框架帮助我们将复杂的操作细节进行了封装，而使用者只需要关心目标 view controller 的样式即可。</li>
+<li><a href="https://github.com/muukii/NextGrowingTextView">NextGrowingTextView</a>  随着输入文本变化而自动调整高度的 text view。相比起其他类似的实现，NextGrowingTextView 是基于 iOS 7 的 TextKit 大幅修改之前的类似框架的重写。它为使用者提供了足够的委托方法和访问接口，十分灵活。 <img src="http://lichangsong.github.io/img/D5C58395-B311-490C-857C-CABCF551207D.png" alt="" title=""></li>
+<li><a href="https://github.com/JohnEstropia/CoreStore">CoreStore</a> Core Data 是 Apple 官方的数据关系图框架。虽然通过 Core Data 来使用和操作数据库可以不向项目中引入额外依赖，但是 Core Data 强大的功能的背后是较为陡峭的学习曲线和对开发者相对较高的技能要求。很多时候我们往往会选择一些替代方案或者对 Core Data 的再次包装和简化。CoreStore 就是一个基于 Core Data 的 API 封装，它能让我们利用 Swift 的特性以一种更好的方式使用 Core Data。</li>
+</ul>
+
+<h2 id="ocpart">OC Part</h2>
+
+<ul>
+<li><a href="https://github.com/NYTimes/objective-c-style-guide">objective-c-style-guide</a> OC 编码规范</li>
+<li><a href="https://github.com/ReactiveCocoa/ReactiveCocoa">ReactiveCocoa</a> 函数响应式编程库</li>
+<li><a href="https://github.com/dustturtle/RealReachability">RealReachability</a> 监视网络状况的改变并在 UI 上进行合适的对应，可以提供良好的用户体验。我们一般都使用Reachability来对网络状况进行监视。但是现有方案存在一个问题，那就是它只监视本地连接是否有效，而并不关心到远端的网络连接是否真的能接收到数据。RealReachability 就是为了解决这个问题的改进版实现，它使用 ping 模型来保证本地连接和到远端的连接是同时有效的，相比原版是一种更可靠的方案。</li>
+<li><a href="https://github.com/dsxNiubility/Wonderful">Wonderful</a> Wonderful 这个库主要是与UIColor息息相连的，其中一共包含四个子文件，UIColor+Wonderful，UIColor+Separate，SXColorGradientView，SXMarquee。分别对应颜色扩展，色彩分离，颜色渐变，和跑马灯 4种主要功能 <img src="http://lichangsong.github.io/img/3BEDA978-CBBE-41AC-B1D0-6B6C904EF85C.png" alt="" title=""></li>
+<li><a href="https://github.com/SergioChan/SCTrelloNavigation">SCTrelloNavigation</a> iOS上类似trello的导航动效控件实现。 <img src="http://lichangsong.github.io/img/865CE005-9B22-405B-A451-6745FFB5C0EF.png" alt="" title=""></li>
+<li><a href="https://github.com/cyanzhong/LunarCore">LunarCore</a> 小历是一个简洁的农历 app，目前支持 iOS &amp; OS X 两端，iOS 端多次被 App Store 官方推荐。 <img src="http://lichangsong.github.io/img/5101FFB5-01D0-42E2-88CB-8084E18F1E4F.png" alt="" title=""></li>
+<li><a href="https://github.com/100apps/openshare">openshare</a> OpenShare的功能就是替代官方的SDK向各个平台的移动客户端(比如QQ)发起请求(分享、OAuth)，然后接收返回结果。 <img src="http://lichangsong.github.io/img/2D43E3D1-17D8-4717-9D11-369BF2E70F91.png" alt="" title=""></li>
+<li><a href="https://github.com/cctv1237/LFProgressHUD">LFProgressHUD</a> 一款菊花加载的框架 <img src="http://lichangsong.github.io/img/D26323E1-C6A3-4BFE-A2E9-8AFB1861B00E.png" alt="" title=""></li>
+<li><a href="https://github.com/RobertGummesson/BuildTimeAnalyzer-for-Xcode">BuildTimeAnalyzer-for-Xcode</a> 一款 Xcode 插件，可以用来统计项目中的文件的编译时间，帮助你找到编译花费时间最长的源文件和方法。对于大型项目来说，编译时间太长是导致开发效率降低的最主要和最直接的原因，如果我们能够压缩编译时间，那么工程师也就会更有动力进行多次部署和调试。你可以通过这款插件的统计，有目的地对源码进行优化，以提高开发效率。 <img src="http://lichangsong.github.io/img/6C8A884E-E58E-42CB-9FCC-DCE8291B038D.png" alt="" title=""></li>
+<li><a href="https://github.com/12207480/TYLaunchAnimation">TYLaunchAnimation</a> 启动图动画，带广告，封装成UIView分类，直接使用，支持自定义view，自定义动画。 <img src="http://lichangsong.github.io/img/1.png" alt="" title=""></li>
+</ul>
+<!-- content end -->
+</div>
+<br>
+<br>
+    <div id="disqus_thread"></div>
+	<div class="footer">
+		<p>© Copyright 2014 by isnowfy, Designed by isnowfy</p>
+	</div>
+</div>
+<script src="main.js"></script>
+<script id="content" type="text/mustache">
+    <h1>{{title}}</h1>
+    <div class="tag">
+    {{date}}
+    {{#tags}}
+    <a href="/#/tag/{{name}}">#{{name}}</a>
+    {{/tags}}
+    </div>
+</script>
+<script id="pagesTemplate" type="text/mustache">
+    {{#pages}}
+    <li>
+        <a href="{{path}}">{{title}}</a>
+    </li>
+    {{/pages}}
+</script>
+<script>
+$(document).ready(function() {
+    $.ajax({
+        url: "main.json",
+        type: "GET",
+        dataType: "json",
+        success: function(data) {
+            $("#title").html(data.name);
+            var pagesTemplate = Hogan.compile($("#pagesTemplate").html());
+            var pagesHtml = pagesTemplate.render({"pages": data.pages});
+            $("#pages").append(pagesHtml);
+            //path
+            var path = "iosthird2.html";
+            //path end
+            var now = 0;
+            for (var i = 0; i < data.posts.length; ++i)
+                if (path == data.posts[i].path)
+                    now = i;
+            var post = data.posts[now];
+            var tmp = post.tags.split(" ");
+            var tags = [];
+            for (var i = 0; i < tmp.length; ++i)
+                if (tmp[i].length > 0)
+                    tags.push({"name": tmp[i]});
+            var contentTemplate = Hogan.compile($("#content").html());
+            var contentHtml = contentTemplate.render({"title": post.title, "tags": tags, "date": post.date});
+            $("#main").prepend(contentHtml);
+            if (data.disqus_shortname.length > 0) {
+                var disqus_shortname = data.disqus_shortname;
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            }
+        }
+    });
+});
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ["\\(", "\\)"]], processEscapes: true}});
+</script>
+</body>
+</html>
