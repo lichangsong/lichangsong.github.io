@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="Keywords" content="blog"/>
+    <meta name="Description" content="blog"/>
+    <title>Simple</title>
+    <link rel="shortcut icon" href="/static/favicon.png"/>
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+</head>
+<body>
+<div class="main">
+    <div class="header">
+    	<ul id="pages">
+            <li><a href="/">home</a></li>
+            <li><a href="/#/tags">tags</a></li>
+            <li><a href="/#/archive">archive</a></li>
+    	</ul>
+    </div>
+	<div class="wrap-header">
+	<h1>
+    <a href="/" id="title"></a>
+	</h1>
+	</div>
+<div id="md" style="display: none;">
+<!-- markdown -->
+Swift Part
+--------
+* [SwiftConChina](https://github.com/ThinkDevelopers/SwiftConChina) SwiftConChina 2016 PPT 
+* [IQKeyboardManager](https://github.com/hackiftekhar/IQKeyboardManager)  可以看到输入框随着键盘的弹出自动上下浮动。点击背景，键盘收起。全自动了。
+这个库默认支持UITextField、UITextView、UIWebView、UIScrollView、UITableView、UICollectionView
+最后要注意一点，它可以自动计算多个textField之间的先后顺序，排列依据是看addSubView的先后顺序。 ![](http://lichangsong.github.io/img/D8CCACF3-21A5-460A-9029-7A7BF02E160D.png)
+* [GPUImage2](https://github.com/BradLarson/GPUImage2) 如果你在做图像处理相关的工作的话，一定不会回 GPUImage这个强大的图像/视频处理框架陌生。GPUImage 2 是使用 Swift 对原来 Objective-C 版本的 GPU Image 进行的完全重写。得益于 Swift 的跨平台特性，现在 GPUImage 2 不仅可以运行在 iOS 和 Mac 上，你还能在 Linux 上使用它。Swift 的语言特性也在这个框架中得到了完美的诠释，相比于 Objective-C 版本，Swift 的新版代码量只有原来的四分之一，并且更加安全易用。GPUImage 2 的作者同时也发布了[一篇博客](http://sunsetlakesoftware.com/2016/04/16/introducing-gpuimage-2-redesigned-swift)来阐释 GPUImage 2 背后的一些思考。 ![](http://lichangsong.github.io/img/31C104A2-3A9E-4908-ABCF-6C852DF6E607.png)
+* [SwiftTheme](https://github.com/jiecao-fm/SwiftTheme) app 中经常会有需要切换主题的需求，而统一管理这些主题的配置和切换其实并不是想象中那么简单的事情。SwiftTheme 是一个专门负责处理这方面需求的框架，你可以通过预先定义像是配色以及图片这样的资源，就可以方便地在各个主题之间进行切换了，十分方便。 ![](http://lichangsong.github.io/img/7F067129-BBE7-4439-952E-9E33440E2B4B.png)
+* [PMAlertController](https://github.com/Codeido/PMAlertController) `UIAlertView` 或者 `UIAlertController` 的外观自定义也十分困难，不过因为本身它们就是作为简单的用户提示控件而存在的。在我们制作 app 时，在弹框这样重要的与用户进行交互的方式中，还是会尽可能希望与自己的 app 风格一致。PMAlertController 就是一个帮助你用更加方便灵活，可自定义的弹窗控件来替换掉 Apple 原来的部件的框架，你可以方便地为 alert 添加图片，安排按钮，实现动画等。 ![](http://lichangsong.github.io/img/DF3AB1B8-4B50-4A65-BB56-A18ED563089C.png)
+* [Scrollable-GraphView](https://github.com/philackm/Scrollable-GraphView) 一个非常漂亮的带有动画的图表框架。你可以用它来制作无限滚动的条形图或者曲线图。该框架也提供了很多可自定义的要素，使用起来非常容易。这个框架很适合用来进行简单的数据展示，原型设计等。 ![](http://lichangsong.github.io/img/F64D9AEB-155F-40A4-AD94-0A7991AED8B3.png)
+* [CryptoSwift](https://github.com/krzyzanowskim/CryptoSwift) swift加密库, 支持md5,sha1,sha224,sha256,aes..
+* [WKZombie](https://github.com/mkoehnke/WKZombie) 由 Swift 编写的一个无界面浏览器框架，它非常适合用来解析网页内容，并进行一些自动化操作。像是获取网页内容值，提交表单等等自然不在话下。如果你需要在应用中实现一些类似简单爬虫或者网页自动化的流程，或是为你的网站编写测试，那使用这个框架会让你事半功倍。
+* [LeeGo](https://github.com/wangshengjia/LeeGo) LeeGo 是一个尝试使用声明式的，可配置的和易复用的 UI 组件进行用户界面开发的方式。相对于直接创建和书写 `UIView` 的子类，LeeGo 通过创建 `Brick` 来将用户界面分解成一个一个的小块，然后再将它们进行组合并展示为完整的用户界面。相比于传统的 `UIView`，LeeGo 的 UI 创建方式是声明式的，并且能够通过 JSON 进行远程的更新，是一种十分具有吸引力的 UI 构建方式。
+* [PeekPop](https://github.com/marmelroy/PeekPop) 3DTouch动画组件,让6s之前的机器能体验3DTouch ![](http://lichangsong.github.io/img/337D8466-37FF-45B5-8A25-EB28A0BF1E6B.png)
+* [Networking](https://github.com/3lvis/Networking) 一个简单的对 `NSURLSession` 的封装的网络框架，使用这个框架可以非常方便地完成绝大多数一般 app 中的网络部分的请求，它可以让我们用更安全的方式对网络请求进行设置，而不用再去手动处理像是 content type 或者 token 这些细节。另外，这个框架还提供了 stub 和 mock 的能力，让快速搭建原型的同时，可以避免今后对代码的再次更改。
+* [RxAlamofire](https://github.com/RxSwiftCommunity/RxAlamofire) 为Alamofire提供 函数响应式（FRP）调用接口。以优雅的方式使用Alamofire进行网络请求
+* [AlamofireObjectMapper](https://github.com/tristanhimmelman/AlamofireObjectMapper) 将Alamofire JSON响应数据 转为swift对象
+* [PromiseKit](https://github.com/mxcl/PromiseKit) 异步编程类库 提供了很多实用的异步函数 让异步编程更简单
+* [PermissionScope](https://github.com/nickoneill/PermissionScope) 权限管理库 提供申请权限授权操作
+ ![](http://lichangsong.github.io/img/6B75AAC1-554C-48A4-89C9-9CAA78A9EEB5.png)
+* [Stellar](https://github.com/AugustRush/Stellar) Stellar 是一个 Swift 的物理动画框架，它基于 Apple 的 UIDynamic，并对其进行了一些高层次的封装，是我们能以很简单的 API 来制作常见的动画效果。这个框架使用了类似 Promise 的层联方法来组织动画，并且全面适配和利用了 Swift 的语法特点。同时，框架还为我们提供了一些 Playground 的例子，让我们能够很直观和迅速地调试动画，非常方便。
+ ![](http://lichangsong.github.io/img/5FB9065E-149B-4C46-A5A0-A19CB25F6F8E.png)
+* [folding-cell](https://github.com/Ramotion/folding-cell) 一个非常炫的 table view cell 展开的动画效果，它模拟了折叠的纸片翻开的动画，让人眼前一亮。动画效果的复用本身是一件比较复杂和困难的事情，这个动画效果的开发者做了不少努力，让这个动画效果尽可能地更容易被复用。它的实现方式非常值得参考，也许能对你自己制作应用时创建和复用复杂动画带来一些启示。
+ ![](http://lichangsong.github.io/img/EF1E2B3A-7F1F-4000-BACA-CC5B4F52D3FE.png)
+* [AssistantKit](https://github.com/anatoliyv/AssistantKit) 有时候我们需要判别用户使用的设备种类、系统版本或者屏幕尺寸等信息。我们可以使用 SDK 中相关的方法来进行获取，但是系统 SDK 提供的方法存在很难使用，而且不太安全等问题。AssistantKit 是一个这方面的一站式解决方案，你可以用更加符合先进开发的方式来获取这些信息。 
+* [PinpointKit](https://github.com/Lickability/PinpointKit) 这个框架可以让用户或者测试者通过简单的手势来向你发送带有标注的截图反馈或者是输出日志。你既可以将它用作实际产品上线后的用户反馈渠道，也可以作为内部测试时加速交流的工具。 ![](http://lichangsong.github.io/img/3A15EBD2-6500-45F8-808B-D698401FBE99.png)
+* [DatePickerDialog-iOS-Swift](https://github.com/squimer/DatePickerDialog-iOS-Swift) 日期选择器 ![](http://lichangsong.github.io/img/9F0A3128-1D4C-4D77-846F-E0C4E0E9B4FE.png)
+ 
+
+OC Part
+--------
+* [Aspects](https://github.com/steipete/Aspects) swift面向切面编程（AOP）库 【Method Swizzling】
+* [C-41](https://github.com/ashfurrow/C-41) 该项目教你如何使用Core Data, unit tests, ReactiveCocoa, and Model-View-ViewModel.
+* [MVVM](https://github.com/shenAlexy/MVVM) MVVM架构的一次实践，重写iOS头条客户端  
+![](http://lichangsong.github.io/img/F22E5B53-FC4B-4C3B-856A-7B9C16925D30.png)
+* [greedo-layout-for-ios](https://github.com/500px/greedo-layout-for-ios) 高度固定的瀑布流框架 ![](http://lichangsong.github.io/img/F4867290-D6A4-44BC-9756-9B9DA7DDB1E0.png)
+* [Appz](https://github.com/SwiftKitz/Appz) swift 在 iOS 9 中使用 URL Scheme 打开其他 app 的方式受到了很大的限制，为了安全因素，Apple 鼓励使用 Universal Link 的方式在应用间跳转。但是相比起探测应用的 URL Scheme，链接更难以整理。Appz 是一个帮助开发者更容易使用 Deep Link 的框架，它收集了很多常见应用的打开方式和对应的 app id，并且保证了外部链接的检查和打开代码与应用的其他逻辑代码分离，并且易于测试  
+![](http://lichangsong.github.io/img/3F3E0783-9164-4B05-9BBB-3B942F1ACDDA.png)
+* [FBMemoryProfiler](https://github.com/facebook/FBMemoryProfiler) Facebook 出品的一个实时监测内存使用的库。相比于 Xcode 自带的 Instruments，这个框架提供了更友好的信息，包括当前没有释放的对象以及 retain cycle 的详细信息等。这个工具是高度模块化的，你可以选择自己感兴趣的部分使用，比如要是你只想要检测 retain cycle 的话，可以只需要使用 Facebook 同时公布的这个项目.
+* [FBRetainCycleDetector](https://github.com/facebook/FBRetainCycleDetector) Facebook 出品的循环引用检测
+* [JSPatchX](https://github.com/bang590/JSPatchX) 可以让你用 JavaScript 书写原生 iOS app，在实际使用中，只需在项目引入极小的引擎，就可以使用 JavaScript 调用任何 Objective-C 的原生接口，获得脚本语言的优势：为项目动态添加模块，或替换项目原生代码动态修复 bug。这个项目是 JSPatch 的 Xcode 代码自动补全插件，使用这个插件，能让你在 Xcode 中很容易地书写 Javascript 的文件。  
+![](http://lichangsong.github.io/img/47C1C72F-143B-4BA9-8667-6ABB1E4B109E.png)
+* [KSCrash](https://github.com/kstenerud/KSCrash) 获取iOS奔溃详细报告的插件
+* [BeautifyFaceDemo](https://github.com/Guikunzhi/BeautifyFaceDemo) 基于GPUImage的人脸磨皮、美白、提亮的美颜滤镜  GPUImageBeautifyFilter是一个自定义的美颜滤镜，可以用来处理实时视频流或者是静态图片 主要原理是双边滤波、Canny边缘检测和肤色检测
+* [ZYKeyboardUtil](https://github.com/liuzhiyi1992/ZYKeyboardUtil) 一个Block,全自动处理键盘遮挡输入控件问题。
+* [BATabBarController](https://github.com/antiguab/BATabBarController) 系统原生的 `TabBarView` 有着非常多的限制，为 tab bar 自定义外观一直是一件很难的事情，更别说自定义一些漂亮的交互和动画效果。而这个框架通过完全自定义重写一个 tab view controller，从而灵活地实现了一个非常炫酷的 tab bar view 动画效果。如果有类似需求的时候，不妨参考一下这个框架的组织方式。  ![](http://lichangsong.github.io/img/CB6AAA00-5EF7-403C-ADDC-E88F9C7CCEA5.png)
+* [Atlas-iOS](https://github.com/layerhq/Atlas-iOS) 如果你需要在应用中制作一个和系统的信息应用类似的交流工具的聊天界面的话，Atlas 可能会是最快的选择了。你可以通过简单地实现 Atlas 的 data source 来迅速搭建一个聊天界面，也可以使用内建的众多组件来实现像是联系人查找，消息排序等功能。如果有需要，你也可以对界面元素进行自定义，以满足业务需求。 ![](http://lichangsong.github.io/img/B6DCAD62-72D4-4A63-9C21-EC31C65D7DD2.png)
+* [SaveTheDot](https://github.com/JakeLin/SaveTheDot) 在 iOS 10 中 Apple 引入了 `UIViewPropertyAnimator`，它可以用来控制交互式的 `UIView` 属性动画。这个项目通过 `UIViewPropertyAnimator` 实现了一个通过 UIView 动画构成的小游戏。  ![](http://lichangsong.github.io/img/3F31FF23-AABF-4434-B23C-18526BEEB634.png)
+* [Potatso](https://github.com/shadowsocks/Potatso) 通过 iOS 9 Network Extension 构建的网络代理应用，可以监视和调试通过设备的网络请求。作为一个完整的 app，项目里对于各类第三方框架的使用，Model 的组织方式，以及网络部分的处理都十分值得学习
+<!-- markdown end -->
+</div>
+<div class="entry" id="main">
+<!-- content -->
+<h2 id="swiftpart">Swift Part</h2>
+
+<ul>
+<li><a href="https://github.com/ThinkDevelopers/SwiftConChina">SwiftConChina</a> SwiftConChina 2016 PPT </li>
+<li><a href="https://github.com/hackiftekhar/IQKeyboardManager">IQKeyboardManager</a>  可以看到输入框随着键盘的弹出自动上下浮动。点击背景，键盘收起。全自动了。
+这个库默认支持UITextField、UITextView、UIWebView、UIScrollView、UITableView、UICollectionView
+最后要注意一点，它可以自动计算多个textField之间的先后顺序，排列依据是看addSubView的先后顺序。 <img src="http://lichangsong.github.io/img/D8CCACF3-21A5-460A-9029-7A7BF02E160D.png" alt="" title=""></li>
+<li><a href="https://github.com/BradLarson/GPUImage2">GPUImage2</a> 如果你在做图像处理相关的工作的话，一定不会回 GPUImage这个强大的图像/视频处理框架陌生。GPUImage 2 是使用 Swift 对原来 Objective-C 版本的 GPU Image 进行的完全重写。得益于 Swift 的跨平台特性，现在 GPUImage 2 不仅可以运行在 iOS 和 Mac 上，你还能在 Linux 上使用它。Swift 的语言特性也在这个框架中得到了完美的诠释，相比于 Objective-C 版本，Swift 的新版代码量只有原来的四分之一，并且更加安全易用。GPUImage 2 的作者同时也发布了<a href="http://sunsetlakesoftware.com/2016/04/16/introducing-gpuimage-2-redesigned-swift">一篇博客</a>来阐释 GPUImage 2 背后的一些思考。 <img src="http://lichangsong.github.io/img/31C104A2-3A9E-4908-ABCF-6C852DF6E607.png" alt="" title=""></li>
+<li><a href="https://github.com/jiecao-fm/SwiftTheme">SwiftTheme</a> app 中经常会有需要切换主题的需求，而统一管理这些主题的配置和切换其实并不是想象中那么简单的事情。SwiftTheme 是一个专门负责处理这方面需求的框架，你可以通过预先定义像是配色以及图片这样的资源，就可以方便地在各个主题之间进行切换了，十分方便。 <img src="http://lichangsong.github.io/img/7F067129-BBE7-4439-952E-9E33440E2B4B.png" alt="" title=""></li>
+<li><a href="https://github.com/Codeido/PMAlertController">PMAlertController</a> <code>UIAlertView</code> 或者 <code>UIAlertController</code> 的外观自定义也十分困难，不过因为本身它们就是作为简单的用户提示控件而存在的。在我们制作 app 时，在弹框这样重要的与用户进行交互的方式中，还是会尽可能希望与自己的 app 风格一致。PMAlertController 就是一个帮助你用更加方便灵活，可自定义的弹窗控件来替换掉 Apple 原来的部件的框架，你可以方便地为 alert 添加图片，安排按钮，实现动画等。 <img src="http://lichangsong.github.io/img/DF3AB1B8-4B50-4A65-BB56-A18ED563089C.png" alt="" title=""></li>
+<li><a href="https://github.com/philackm/Scrollable-GraphView">Scrollable-GraphView</a> 一个非常漂亮的带有动画的图表框架。你可以用它来制作无限滚动的条形图或者曲线图。该框架也提供了很多可自定义的要素，使用起来非常容易。这个框架很适合用来进行简单的数据展示，原型设计等。 <img src="http://lichangsong.github.io/img/F64D9AEB-155F-40A4-AD94-0A7991AED8B3.png" alt="" title=""></li>
+<li><a href="https://github.com/krzyzanowskim/CryptoSwift">CryptoSwift</a> swift加密库, 支持md5,sha1,sha224,sha256,aes..</li>
+<li><a href="https://github.com/mkoehnke/WKZombie">WKZombie</a> 由 Swift 编写的一个无界面浏览器框架，它非常适合用来解析网页内容，并进行一些自动化操作。像是获取网页内容值，提交表单等等自然不在话下。如果你需要在应用中实现一些类似简单爬虫或者网页自动化的流程，或是为你的网站编写测试，那使用这个框架会让你事半功倍。</li>
+<li><a href="https://github.com/wangshengjia/LeeGo">LeeGo</a> LeeGo 是一个尝试使用声明式的，可配置的和易复用的 UI 组件进行用户界面开发的方式。相对于直接创建和书写 <code>UIView</code> 的子类，LeeGo 通过创建 <code>Brick</code> 来将用户界面分解成一个一个的小块，然后再将它们进行组合并展示为完整的用户界面。相比于传统的 <code>UIView</code>，LeeGo 的 UI 创建方式是声明式的，并且能够通过 JSON 进行远程的更新，是一种十分具有吸引力的 UI 构建方式。</li>
+<li><a href="https://github.com/marmelroy/PeekPop">PeekPop</a> 3DTouch动画组件,让6s之前的机器能体验3DTouch <img src="http://lichangsong.github.io/img/337D8466-37FF-45B5-8A25-EB28A0BF1E6B.png" alt="" title=""></li>
+<li><a href="https://github.com/3lvis/Networking">Networking</a> 一个简单的对 <code>NSURLSession</code> 的封装的网络框架，使用这个框架可以非常方便地完成绝大多数一般 app 中的网络部分的请求，它可以让我们用更安全的方式对网络请求进行设置，而不用再去手动处理像是 content type 或者 token 这些细节。另外，这个框架还提供了 stub 和 mock 的能力，让快速搭建原型的同时，可以避免今后对代码的再次更改。</li>
+<li><a href="https://github.com/RxSwiftCommunity/RxAlamofire">RxAlamofire</a> 为Alamofire提供 函数响应式（FRP）调用接口。以优雅的方式使用Alamofire进行网络请求</li>
+<li><a href="https://github.com/tristanhimmelman/AlamofireObjectMapper">AlamofireObjectMapper</a> 将Alamofire JSON响应数据 转为swift对象</li>
+<li><a href="https://github.com/mxcl/PromiseKit">PromiseKit</a> 异步编程类库 提供了很多实用的异步函数 让异步编程更简单</li>
+<li><a href="https://github.com/nickoneill/PermissionScope">PermissionScope</a> 权限管理库 提供申请权限授权操作
+<img src="http://lichangsong.github.io/img/6B75AAC1-554C-48A4-89C9-9CAA78A9EEB5.png" alt="" title=""></li>
+<li><a href="https://github.com/AugustRush/Stellar">Stellar</a> Stellar 是一个 Swift 的物理动画框架，它基于 Apple 的 UIDynamic，并对其进行了一些高层次的封装，是我们能以很简单的 API 来制作常见的动画效果。这个框架使用了类似 Promise 的层联方法来组织动画，并且全面适配和利用了 Swift 的语法特点。同时，框架还为我们提供了一些 Playground 的例子，让我们能够很直观和迅速地调试动画，非常方便。
+<img src="http://lichangsong.github.io/img/5FB9065E-149B-4C46-A5A0-A19CB25F6F8E.png" alt="" title=""></li>
+<li><a href="https://github.com/Ramotion/folding-cell">folding-cell</a> 一个非常炫的 table view cell 展开的动画效果，它模拟了折叠的纸片翻开的动画，让人眼前一亮。动画效果的复用本身是一件比较复杂和困难的事情，这个动画效果的开发者做了不少努力，让这个动画效果尽可能地更容易被复用。它的实现方式非常值得参考，也许能对你自己制作应用时创建和复用复杂动画带来一些启示。
+<img src="http://lichangsong.github.io/img/EF1E2B3A-7F1F-4000-BACA-CC5B4F52D3FE.png" alt="" title=""></li>
+<li><a href="https://github.com/anatoliyv/AssistantKit">AssistantKit</a> 有时候我们需要判别用户使用的设备种类、系统版本或者屏幕尺寸等信息。我们可以使用 SDK 中相关的方法来进行获取，但是系统 SDK 提供的方法存在很难使用，而且不太安全等问题。AssistantKit 是一个这方面的一站式解决方案，你可以用更加符合先进开发的方式来获取这些信息。 </li>
+<li><a href="https://github.com/Lickability/PinpointKit">PinpointKit</a> 这个框架可以让用户或者测试者通过简单的手势来向你发送带有标注的截图反馈或者是输出日志。你既可以将它用作实际产品上线后的用户反馈渠道，也可以作为内部测试时加速交流的工具。 <img src="http://lichangsong.github.io/img/3A15EBD2-6500-45F8-808B-D698401FBE99.png" alt="" title=""></li>
+<li><a href="https://github.com/squimer/DatePickerDialog-iOS-Swift">DatePickerDialog-iOS-Swift</a> 日期选择器 <img src="http://lichangsong.github.io/img/9F0A3128-1D4C-4D77-846F-E0C4E0E9B4FE.png" alt="" title=""></li>
+</ul>
+
+<h2 id="ocpart">OC Part</h2>
+
+<ul>
+<li><a href="https://github.com/steipete/Aspects">Aspects</a> swift面向切面编程（AOP）库 【Method Swizzling】</li>
+<li><a href="https://github.com/ashfurrow/C-41">C-41</a> 该项目教你如何使用Core Data, unit tests, ReactiveCocoa, and Model-View-ViewModel.</li>
+<li><a href="https://github.com/shenAlexy/MVVM">MVVM</a> MVVM架构的一次实践，重写iOS头条客户端 <br>
+<img src="http://lichangsong.github.io/img/F22E5B53-FC4B-4C3B-856A-7B9C16925D30.png" alt="" title=""></li>
+<li><a href="https://github.com/500px/greedo-layout-for-ios">greedo-layout-for-ios</a> 高度固定的瀑布流框架 <img src="http://lichangsong.github.io/img/F4867290-D6A4-44BC-9756-9B9DA7DDB1E0.png" alt="" title=""></li>
+<li><a href="https://github.com/SwiftKitz/Appz">Appz</a> swift 在 iOS 9 中使用 URL Scheme 打开其他 app 的方式受到了很大的限制，为了安全因素，Apple 鼓励使用 Universal Link 的方式在应用间跳转。但是相比起探测应用的 URL Scheme，链接更难以整理。Appz 是一个帮助开发者更容易使用 Deep Link 的框架，它收集了很多常见应用的打开方式和对应的 app id，并且保证了外部链接的检查和打开代码与应用的其他逻辑代码分离，并且易于测试 <br>
+<img src="http://lichangsong.github.io/img/3F3E0783-9164-4B05-9BBB-3B942F1ACDDA.png" alt="" title=""></li>
+<li><a href="https://github.com/facebook/FBMemoryProfiler">FBMemoryProfiler</a> Facebook 出品的一个实时监测内存使用的库。相比于 Xcode 自带的 Instruments，这个框架提供了更友好的信息，包括当前没有释放的对象以及 retain cycle 的详细信息等。这个工具是高度模块化的，你可以选择自己感兴趣的部分使用，比如要是你只想要检测 retain cycle 的话，可以只需要使用 Facebook 同时公布的这个项目.</li>
+<li><a href="https://github.com/facebook/FBRetainCycleDetector">FBRetainCycleDetector</a> Facebook 出品的循环引用检测</li>
+<li><a href="https://github.com/bang590/JSPatchX">JSPatchX</a> 可以让你用 JavaScript 书写原生 iOS app，在实际使用中，只需在项目引入极小的引擎，就可以使用 JavaScript 调用任何 Objective-C 的原生接口，获得脚本语言的优势：为项目动态添加模块，或替换项目原生代码动态修复 bug。这个项目是 JSPatch 的 Xcode 代码自动补全插件，使用这个插件，能让你在 Xcode 中很容易地书写 Javascript 的文件。 <br>
+<img src="http://lichangsong.github.io/img/47C1C72F-143B-4BA9-8667-6ABB1E4B109E.png" alt="" title=""></li>
+<li><a href="https://github.com/kstenerud/KSCrash">KSCrash</a> 获取iOS奔溃详细报告的插件</li>
+<li><a href="https://github.com/Guikunzhi/BeautifyFaceDemo">BeautifyFaceDemo</a> 基于GPUImage的人脸磨皮、美白、提亮的美颜滤镜  GPUImageBeautifyFilter是一个自定义的美颜滤镜，可以用来处理实时视频流或者是静态图片 主要原理是双边滤波、Canny边缘检测和肤色检测</li>
+<li><a href="https://github.com/liuzhiyi1992/ZYKeyboardUtil">ZYKeyboardUtil</a> 一个Block,全自动处理键盘遮挡输入控件问题。</li>
+<li><a href="https://github.com/antiguab/BATabBarController">BATabBarController</a> 系统原生的 <code>TabBarView</code> 有着非常多的限制，为 tab bar 自定义外观一直是一件很难的事情，更别说自定义一些漂亮的交互和动画效果。而这个框架通过完全自定义重写一个 tab view controller，从而灵活地实现了一个非常炫酷的 tab bar view 动画效果。如果有类似需求的时候，不妨参考一下这个框架的组织方式。  <img src="http://lichangsong.github.io/img/CB6AAA00-5EF7-403C-ADDC-E88F9C7CCEA5.png" alt="" title=""></li>
+<li><a href="https://github.com/layerhq/Atlas-iOS">Atlas-iOS</a> 如果你需要在应用中制作一个和系统的信息应用类似的交流工具的聊天界面的话，Atlas 可能会是最快的选择了。你可以通过简单地实现 Atlas 的 data source 来迅速搭建一个聊天界面，也可以使用内建的众多组件来实现像是联系人查找，消息排序等功能。如果有需要，你也可以对界面元素进行自定义，以满足业务需求。 <img src="http://lichangsong.github.io/img/B6DCAD62-72D4-4A63-9C21-EC31C65D7DD2.png" alt="" title=""></li>
+<li><a href="https://github.com/JakeLin/SaveTheDot">SaveTheDot</a> 在 iOS 10 中 Apple 引入了 <code>UIViewPropertyAnimator</code>，它可以用来控制交互式的 <code>UIView</code> 属性动画。这个项目通过 <code>UIViewPropertyAnimator</code> 实现了一个通过 UIView 动画构成的小游戏。  <img src="http://lichangsong.github.io/img/3F31FF23-AABF-4434-B23C-18526BEEB634.png" alt="" title=""></li>
+<li><a href="https://github.com/shadowsocks/Potatso">Potatso</a> 通过 iOS 9 Network Extension 构建的网络代理应用，可以监视和调试通过设备的网络请求。作为一个完整的 app，项目里对于各类第三方框架的使用，Model 的组织方式，以及网络部分的处理都十分值得学习</li>
+</ul>
+<!-- content end -->
+</div>
+<br>
+<br>
+    <div id="disqus_thread"></div>
+	<div class="footer">
+		<p>© Copyright 2014 by isnowfy, Designed by isnowfy</p>
+	</div>
+</div>
+<script src="main.js"></script>
+<script id="content" type="text/mustache">
+    <h1>{{title}}</h1>
+    <div class="tag">
+    {{date}}
+    {{#tags}}
+    <a href="/#/tag/{{name}}">#{{name}}</a>
+    {{/tags}}
+    </div>
+</script>
+<script id="pagesTemplate" type="text/mustache">
+    {{#pages}}
+    <li>
+        <a href="{{path}}">{{title}}</a>
+    </li>
+    {{/pages}}
+</script>
+<script>
+$(document).ready(function() {
+    $.ajax({
+        url: "main.json",
+        type: "GET",
+        dataType: "json",
+        success: function(data) {
+            $("#title").html(data.name);
+            var pagesTemplate = Hogan.compile($("#pagesTemplate").html());
+            var pagesHtml = pagesTemplate.render({"pages": data.pages});
+            $("#pages").append(pagesHtml);
+            //path
+            var path = "iosthird3.html";
+            //path end
+            var now = 0;
+            for (var i = 0; i < data.posts.length; ++i)
+                if (path == data.posts[i].path)
+                    now = i;
+            var post = data.posts[now];
+            var tmp = post.tags.split(" ");
+            var tags = [];
+            for (var i = 0; i < tmp.length; ++i)
+                if (tmp[i].length > 0)
+                    tags.push({"name": tmp[i]});
+            var contentTemplate = Hogan.compile($("#content").html());
+            var contentHtml = contentTemplate.render({"title": post.title, "tags": tags, "date": post.date});
+            $("#main").prepend(contentHtml);
+            if (data.disqus_shortname.length > 0) {
+                var disqus_shortname = data.disqus_shortname;
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            }
+        }
+    });
+});
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ["\\(", "\\)"]], processEscapes: true}});
+</script>
+</body>
+</html>
